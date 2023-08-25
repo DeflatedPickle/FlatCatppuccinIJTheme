@@ -1,7 +1,14 @@
+@file:Suppress("SpellCheckingInspection", "unused")
+
 package com.deflatedpickle.flatlaf.intellijthemes
 
-object FlatCatppuccinMochaIJTheme : CatppuccinTheme("mocha") {
-    fun setup() = setup(FlatCatppuccinMochaIJTheme)
-    fun installLafInfo() = installLafInfo(name, FlatCatppuccinMochaIJTheme::class.java)
-    override fun getName() = "Catppuccin - Mocha"
+class FlatCatppuccinMochaIJTheme : CatppuccinTheme("mocha") {
+    companion object {
+        const val NAME = "Catppuccin - Mocha"
+
+        fun setup() = setup(FlatCatppuccinMochaIJTheme())
+        fun installLafInfo() = installLafInfo(NAME, FlatCatppuccinMochaIJTheme::class.java)
+    }
+
+    override fun getName() = NAME
 }

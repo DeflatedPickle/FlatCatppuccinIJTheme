@@ -2,8 +2,13 @@
 
 package com.deflatedpickle.flatlaf.intellijthemes
 
-object FlatCatppuccinMacchiatoIJTheme : CatppuccinTheme("macchiato") {
-    fun setup() = setup(FlatCatppuccinMacchiatoIJTheme)
-    fun installLafInfo() = installLafInfo(name, FlatCatppuccinMacchiatoIJTheme::class.java)
-    override fun getName() = "Catppuccin - Macchiato"
+class FlatCatppuccinMacchiatoIJTheme : CatppuccinTheme("macchiato") {
+    companion object {
+        const val NAME = "Catppuccin - Macchiato"
+
+        fun setup() = setup(FlatCatppuccinMacchiatoIJTheme())
+        fun installLafInfo() = installLafInfo(NAME, FlatCatppuccinMacchiatoIJTheme::class.java)
+    }
+
+    override fun getName() = NAME
 }
